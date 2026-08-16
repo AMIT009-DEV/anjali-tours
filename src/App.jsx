@@ -1,33 +1,53 @@
+
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <div className="app">
-      <header className="navbar">
-        <div className="logo">
-          <span>✈</span>
-          <div>
-            <strong>Anjali Tours</strong>
-            <small>Travel • Explore • Enjoy</small>
-          </div>
-        </div>
+ <header className="navbar">
+  <div className="logo">
+    <span>✈</span>
+    <div>
+      <strong>Anjali Tours</strong>
+      <small>Travel • Explore • Enjoy</small>
+    </div>
+  </div>
 
-        <nav>
-          <a href="#home">Home</a>
-          <a href="#tours">Tours</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
-        </nav>
+  <nav className={menuOpen ? 'nav-open' : ''}>
+    <a href="#home" onClick={() => setMenuOpen(false)}>
+      Home
+    </a>
 
-        <button className="menu-btn" type="button">
-  ☰
-</button>
+    <a href="#tours" onClick={() => setMenuOpen(false)}>
+      Tours
+    </a>
 
-       <a className="book-btn" href="#booking">
-  Book Now
-</a>
-   
-      </header>
+    <a href="#about" onClick={() => setMenuOpen(false)}>
+      About Us
+    </a>
+
+    <a href="#contact" onClick={() => setMenuOpen(false)}>
+      Contact
+    </a>
+  </nav>
+
+  <div className="navbar-actions">
+    <button
+      className="menu-btn"
+      onClick={() => setMenuOpen(!menuOpen)}
+      type="button"
+    >
+      ☰
+    </button>
+
+    <a className="book-btn" href="#booking">
+      Book Now
+    </a>
+  </div>
+</header>
 
       <main>
         {/* HERO */}
@@ -319,46 +339,70 @@ Message: ${message}`
     </form>
   </div>
 </section>
-        {/* CONTACT */}
-        <section className="contact section" id="contact">
-          <div className="contact-box">
-            <span>READY FOR YOUR NEXT ADVENTURE?</span>
+ {/* CONTACT */}
+<section className="contact section" id="contact">
+  <div className="contact-box">
+    <span>READY FOR YOUR NEXT ADVENTURE?</span>
 
-            <h2>Let's plan your dream trip.</h2>
+    <h2>Let's plan your dream trip.</h2>
 
-            <p>
-              Tell us where you want to go and we'll help you plan the
-              perfect journey.
-            </p>
+    <p>
+      Tell us where you want to go and we'll help you plan the
+      perfect journey.
+    </p>
 
-            <div className="contact-buttons">
-  <a href="tel:+919960231991" className="primary-btn">
-    📞 Call Us Now
-  </a>
-  
-  <a
-  href="https://api.whatsapp.com/send?phone=919960231991&text=Hello%20Anjali%20Tours%2C%20mala%20tour%20baddal%20mahiti%20havi%20aahe."
-  className="whatsapp-btn"
-  target="_blank"
-  rel="noreferrer"
->
-  💬 WhatsApp Us
-</a>
-</div>
-</div>
-</section>
-      </main>
+    <div className="contact-buttons">
+      <a href="tel:+919960231991" className="primary-btn">
+        📞 Call Us Now
+      </a>
 
-      <footer>
-        <div>
-          <strong>✈ Anjali Tours</strong>
-          <p>Travel • Explore • Enjoy</p>
-        </div>
-
-        <p>© 2026 Anjali Tours. All rights reserved.</p>
-      </footer>
+      <a
+        href="https://api.whatsapp.com/send?phone=919960231991&text=Hello%20Anjali%20Tours%2C%20mala%20tour%20baddal%20mahiti%20havi%20aahe."
+        className="whatsapp-btn"
+        target="_blank"
+        rel="noreferrer"
+      >
+        💬 WhatsApp Us
+      </a>
     </div>
+  </div>
+</section>
+
+{/* FOOTER */}
+<footer className="footer">
+  <div className="footer-brand">
+    <strong>✈ Anjali Tours</strong>
+    <p>Travel • Explore • Enjoy</p>
+  </div>
+
+  <div className="footer-links">
+    <a href="#home">Home</a>
+    <a href="#tours">Tours</a>
+    <a href="#about">About Us</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div className="footer-contact">
+    <a href="tel:+919960231991">📞 +91 99602 31991</a>
+
+    <a
+      href="https://api.whatsapp.com/send?phone=919960231991"
+      target="_blank"
+      rel="noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+  </div>
+
+  <div className="footer-bottom">
+    <p>© 2026 Anjali Tours. All rights reserved.</p>
+    <span>Made with ❤️ for travellers</span>
+  </div>
+</footer>
+</main>
+</div>
   )
 }
 
-export default App  
+export default App

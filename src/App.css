@@ -1104,3 +1104,110 @@ nav a:hover {
     font-size: 12px;
   }
 }
+/* ================================
+   PROFESSIONAL ANIMATIONS
+================================ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-content {
+  animation: fadeRight 0.8s ease-out;
+}
+
+.hero-image {
+  animation: fadeUp 0.9s ease-out;
+}
+
+.section-heading {
+  animation: fadeUp 0.7s ease-out;
+}
+
+.tour-card {
+  animation: fadeUp 0.7s ease-out;
+}
+
+.about-box {
+  animation: fadeUp 0.8s ease-out;
+}
+
+.booking-box {
+  animation: fadeUp 0.8s ease-out;
+}
+
+.contact-box {
+  animation: fadeUp 0.8s ease-out;
+}
+
+/* Button hover */
+
+.primary-btn,
+.secondary-btn,
+.book-btn,
+.whatsapp-btn,
+.enquiry-btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.book-btn:hover,
+.whatsapp-btn:hover,
+.enquiry-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Logo hover */
+
+.logo > span {
+  transition: transform 0.25s ease;
+}
+
+.logo:hover > span {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* Mobile menu button */
+
+.menu-btn {
+  transition: transform 0.2s ease;
+}
+
+.menu-btn:active {
+  transform: scale(0.9);
+}
+
+/* Respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
